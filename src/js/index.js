@@ -7,13 +7,10 @@ function initMap() {
         mapId: '2f084b4895741534',
     });
     const marker = new google.maps.Marker({
-        position: {lat: 40.6781, lng: -73.8981},
+        position: {lat: 40.6686, lng: -73.8999},
         map: map,
         title: "Monticello",
-        icon: {
-            url: "https://i.postimg.cc/30jd33ns/Pin.png",
-            scaledSize: new google.maps.Size(100, 100),
-        },
+        icon: "../assets/img/marker.svg",
     });
 }
 

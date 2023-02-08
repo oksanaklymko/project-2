@@ -439,7 +439,7 @@
 }
 
 .what-we-do .container {
-  padding: 150px 0 120px;
+  padding-bottom: 150px;
 }
 
 .what-we-do h2 {
@@ -465,90 +465,102 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  height: 530px;
-  position: relative;
   margin-bottom: 150px;
+  align-items: flex-end;
 }
 
 .what-we-do .article-holder .image-holder {
   position: relative;
-  top: 0;
-  left: 0;
+  flex: 1 0;
+  width: 60%;
+  padding-bottom: 50%;
 }
 
 .what-we-do .article-holder .image-holder img {
-  width: 585px;
-  height: 470px;
-}
-
-.what-we-do .article-holder .image-holder .rectangle {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-
-.what-we-do .article-holder .image-holder .mask {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: absolute;
-  top: 57px;
-  left: 215px;
 }
 
-.what-we-do .article-holder .article {
+.what-we-do .article-holder.img-left .image-holder:before {
+  content: "";
+  top: -10%;
+  left: -40%;
+  right: 40%;
+  background-color: #55B7FF;
   position: absolute;
-  right: 0;
-  bottom: 0;
-  max-width: 35%;
+  bottom: 10%;
+}
+
+.what-we-do .article-holder.img-left .article {
+  padding-left: 70px;
+}
+
+.what-we-do .article-holder.img-right .image-holder:before {
+  content: "";
+  top: -10%;
+  left: 40%;
+  right: -40%;
+  background-color: #55B7FF;
+  position: absolute;
+  bottom: 10%;
+}
+
+.what-we-do .article-holder.img-right .article {
+  padding-right: 70px;
+}
+
+.what-we-do .article {
+  max-width: 40%;
   width: 100%;
   flex: 1 auto;
 }
 
-.what-we-do .article-holder .article .text {
-  margin-left: 70px;
-}
-
-.what-we-do .article-holder .article .text span {
+.what-we-do .article .text span {
   font-weight: 400;
   font-size: 22px;
   line-height: 27px;
   color: #2C4058;
 }
 
-.what-we-do .article-holder .article .text h2 {
+.what-we-do .article .text h2 {
   margin: 0 0 20px;
   text-align: start;
 }
 
-.what-we-do .article-holder .article .text h2::before {
+.what-we-do .article .text h2::before {
   content: none;
 }
 
-.what-we-do .article-holder .article .text p {
+.what-we-do .article .text p {
   line-height: 30px;
   padding: 0 0 40px;
 }
 
-.what-we-do .article-holder .article .text .btn {
+.what-we-do .article .text .btn {
   display: inline;
   transition: all ease-in-out 0.3s;
 }
 
-.what-we-do .article-holder .article .text .btn:hover {
+.what-we-do .article .text .btn:hover {
   background-color: #55B7FF;
   border: none;
   color: #FFFFFF;
 }
 
-.what-we-do .article-holder .article .text .location {
+.what-we-do .article .text .location {
   margin-top: 60px;
 }
 
-.what-we-do .article-holder .article .text .location p {
+.what-we-do .article .text .location p {
   padding-left: 10px;
   font-family: "Open Sans", sans-serif;
   font-style: italic;
 }
 
-.what-we-do .article-holder:last-child {
+.article-holder:last-child {
   transform: rotate(1turn);
 }
 
@@ -557,7 +569,8 @@ footer {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-bottom: 235px;
+  padding: 200px 0 235px;
+  position: relative;
 }
 
 footer span {
@@ -566,15 +579,22 @@ footer span {
   color: #FFFFFF;
   font-family: "Montserrat", sans-serif;
   margin: 0 auto;
+  max-width: 770px;
+  width: 100%;
+  display: block;
 }
 
 .get-in-touch {
   max-width: 770px;
   background: #FFFFFF;
-  margin: -300px auto 0;
+  margin: 0 auto;
   z-index: 2;
-  position: relative;
+  position: absolute;
   padding: 60px 60px 70px;
+  top: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
 }
 
 .get-in-touch h2 {
